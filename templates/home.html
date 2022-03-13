@@ -1,0 +1,53 @@
+{% extends './base.html' %}
+
+<!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    <title>{% block title %}IA UMG{% endblock %}</title>    
+    <meta charset="UTF-8">
+    <meta name="title" content="IMG">
+    <meta name="description" content="IA UMG">    
+    
+  </head>  
+  <body>
+      
+      {% block body %}
+    
+      <h1 class=" p-2">Texto </h1>
+      <p>
+        Administración Avanzada de Bases de Datos es un curso en el que se busca llevar al estudiante más allá
+del paradigma de base de datos relacional y SQL que se enseña tradicionalmente en el nivel de pregrado
+en las Escuelas de Ingeniería. En este curso se pretende introducir al estudiante en temas de gran
+importancia en el ámbito de las bases de datos como desempeño y escalabilidad. Además, se busca
+presentar al estudiante paradigmas contemporáneos y complementarios del modelo relacional, como bases
+de datos multidimensionales, geográficas y NoSQL.
+      </p>
+            <h1 class=" p-2">Resultado </h1>
+
+        <div class="row shadow-lg p-3 mb-5 bg-white rounded ">
+      {%for i in resultado%}
+        <div class="col-lg">
+          <table class="table table-responsive" >
+            <thead>
+              <th> Palabra </th>
+              <th> Frecuencia </th>
+    
+            </thead>
+    
+            <tbody>
+                {%for x in resultado[i]%}
+                  <tr>
+                    <td>{{x[0]}}</td>
+                                    <td>{{x[1]}}</td>
+    
+                  </tr>
+                {%endfor%}
+            </tbody>
+          </table>
+        </div>
+      {%endfor%}
+  {% endblock %} 
+      
+  </body>  
+</html>
+
